@@ -108,7 +108,7 @@ fun OTPInputWithError() {
         onComplete = {
             // Validate OTP when 6 digits are entered
             if (otpValue != "123456") {
-                errorMessage = UiText.DynamicString("OTP tidak valid")
+                errorMessage = UiText.DynamicString("Invalid OTP")
             }
         }
     )
@@ -241,7 +241,7 @@ fun CompleteOTPExample() {
 
         if (isSuccess) {
             Text(
-                text = "✓ OTP berhasil divalidasi!",
+                text = "✓ OTP successfully validated!",
                 color = MaterialTheme.colorScheme.primary
             )
         }
@@ -250,10 +250,10 @@ fun CompleteOTPExample() {
             onClick = {
                 when {
                     otpValue.isEmpty() -> {
-                        errorMessage = UiText.DynamicString("Harap masukkan OTP")
+                        errorMessage = UiText.DynamicString("Please enter OTP")
                     }
                     otpValue.length < 6 -> {
-                        errorMessage = UiText.DynamicString("OTP harus 6 digit lengkap")
+                        errorMessage = UiText.DynamicString("OTP must be 6 complete digits")
                     }
                     else -> {
                         validateOTP(otpValue)
@@ -274,7 +274,7 @@ fun validateOTP(otp: String) {
         errorMessage = null
     } else {
         isSuccess = false
-        errorMessage = UiText.DynamicString("OTP tidak valid")
+        errorMessage = UiText.DynamicString("Invalid OTP")
     }
 }
 ```
@@ -332,7 +332,7 @@ sealed class UiText {
 
 ```kotlin
 // Dynamic string
-val error1 = UiText.DynamicString("OTP tidak valid")
+val error1 = UiText.DynamicString("Invalid OTP")
 
 // String resource
 val error2 = UiText.StringResource(R.string.otp_error)
@@ -341,7 +341,7 @@ val error2 = UiText.StringResource(R.string.otp_error)
 val error3 = UiText.Combined(
     listOf(
         UiText.StringResource(R.string.error_prefix),
-        UiText.DynamicString("OTP tidak valid")
+        UiText.DynamicString("Invalid OTP")
     )
 )
 ```
