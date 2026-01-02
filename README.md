@@ -3,10 +3,11 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Kotlin](https://img.shields.io/badge/Kotlin-2.0.21-blue.svg)](https://kotlinlang.org/)
 [![Compose](https://img.shields.io/badge/Compose-1.5.0-blue.svg)](https://developer.android.com/jetpack/compose)
+[![Play Store](https://img.shields.io/badge/Play%20Store-Available-brightgreen)](https://play.google.com/store/apps/details?id=id.faazlab.otpplus.demo)
 
 A simple and customizable OTP (One-Time Password) input component for Android built with Jetpack Compose. Features include focus states, error handling with shake animation, auto-complete callback, and full customization support.
 
-> 📱 **Check out the [Demo App](#demo-app) section below to see screenshots and try it yourself!**
+> 📱 **Try the [Demo App](#demo-app) on Play Store or check out the screenshots below!**
 
 ## Features
 
@@ -350,7 +351,7 @@ val error3 = UiText.Combined(
 
 ## Demo App
 
-This repository includes a demo app showcasing various usage scenarios of OTP+:
+Try the OTP+ demo app directly on your device! The demo showcases various usage scenarios:
 
 1. **Positive Scenario** - Successful OTP validation
 2. **Error Scenario** - Error handling with shake animation
@@ -358,6 +359,14 @@ This repository includes a demo app showcasing various usage scenarios of OTP+:
 4. **Auto-Complete Callback** - Automatic callback when 6 digits are entered
 5. **Focus Management** - Programmatic focus control
 6. **Custom Spacing** - Customizable spacing between boxes
+
+### 📱 Download from Play Store
+
+<a href="https://play.google.com/store/apps/details?id=id.faazlab.otpplus.demo" target="_blank">
+  <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" height="80">
+</a>
+
+> **Note**: Update the Play Store link above with your actual published app URL.
 
 ### Screenshots
 
@@ -388,12 +397,19 @@ Automatic callback trigger when 6 digits are entered.
 
 > **Note**: A demo video is also available showing the component in action. The video demonstrates all scenarios including animations and interactions.
 
-### Running the Demo
+### Running the Demo Locally
 
-To run the demo app:
+You can also build and run the demo app locally:
 
 ```bash
 ./gradlew :otpplus-demo:installDebug
+```
+
+Or install directly:
+
+```bash
+./gradlew :otpplus-demo:assembleDebug
+adb install otpplus-demo/build/outputs/apk/debug/otpplus-demo-debug.apk
 ```
 
 ## Customization
